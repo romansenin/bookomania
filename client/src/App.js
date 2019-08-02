@@ -29,7 +29,7 @@ class App extends Component {
         <div>
           <Navbar />
           <Route exact path="/" component={Search} />
-          <Router exact path="/saved" component={Saved} />
+          <Route exact path="/saved" component={Saved} />
           <Footer />
         </div>
       </Router>
