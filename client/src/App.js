@@ -1,4 +1,9 @@
 import React, { Component } from "react";
+import {BrowserRouter as Router, Route } from "react-router-dom";
+import Search from "./components/Search"
+import Saved from "./components/Saved";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import API from "./utils/API";
 
 class App extends Component {
@@ -17,12 +22,17 @@ class App extends Component {
       .then(res => this.setState({ books: res.data }))
       .catch(err => console.log(err));
   };
-  
+
   render() {
     return (
-      <>
-        <h1>Hello World</h1>
-      </>
+      <Router>
+        <div>
+          <Navbar />
+          <Route exact path="/" component={Search} />
+          <Router exact path="/saved" component={Saved} />
+          <Footer />
+        </div>
+      </Router>
     );
   }
 }
