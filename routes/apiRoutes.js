@@ -2,11 +2,10 @@ const axios = require("axios");
 const router = require("express").Router();
 
 router.get("/books", (req, res) => {
+  console.log(req.url);
   axios
     .get(
-      `https://www.googleapis.com/books/v1/volumes?q=flowers+inauthor:keyes&key=${
-        process.env.API_KEY
-      }`,
+      "https://www.googleapis.com/books/v1/volumes?",
       { params: req.query }
     )
     .then(({ data: { results } }) => res.json(results))

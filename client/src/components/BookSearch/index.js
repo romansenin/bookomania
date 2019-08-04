@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./BookSearch.css";
 
+import API from "../../utils/API";
+
 class BookSearch extends Component {
   constructor(props) {
     super(props);
@@ -8,7 +10,14 @@ class BookSearch extends Component {
       value: ""
     };
 
+    this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    
+  }
+
+  handleFormSubmit(event) {
+    API.getBooks(this.state.value).then(res => console.log(res));
+    event.preventDefault();
   }
 
   handleChange(event) {
@@ -21,7 +30,7 @@ class BookSearch extends Component {
         <div className="card">
           <div className="card-body">
             <h5 className="card-title">Book Search</h5>
-            <form onSubmit={this.props.handleFormSubmit}>
+            <form onSubmit={this.handleFormSubmit}>
               <div className="form-group">
                 <label htmlFor="bookInput">Book</label>
                 <input

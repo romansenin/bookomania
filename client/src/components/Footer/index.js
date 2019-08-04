@@ -1,7 +1,12 @@
-import React from "react";
+import React, { Component } from "react";
+import "./Footer.css";
 
-const Footer = () => {
-  return(<h1>Footer</h1>)
+export default class Header extends Component {
+  render() {
+    return (
+      <footer>
+        <p>&copy; 2019</p>
+      </footer>
+    );
+  }
 }
-
-export default Footer;
