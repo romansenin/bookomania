@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import {BrowserRouter as Router, Route } from "react-router-dom";
-import Search from "./components/Search"
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Search from "./components/Search";
 import Saved from "./components/Saved";
 import Navbar from "./components/Navbar";
+import Container from "./components/Container";
 import Footer from "./components/Footer";
 import API from "./utils/API";
 
@@ -28,8 +29,10 @@ class App extends Component {
       <Router>
         <div>
           <Navbar />
-          <Route exact path="/" component={Search} />
-          <Route exact path="/saved" component={Saved} />
+          <Container>
+            <Route exact path="/" component={Search} />
+            <Route exact path="/saved" component={Saved} />
+          </Container>
           <Footer />
         </div>
       </Router>
