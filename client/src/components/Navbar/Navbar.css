@@ -1,0 +1,19 @@
+.navbar {
+  padding: 0;
+}
+
+.nav-link {
+  padding: 1rem;
+}
+
+.navbar-brand {
+  padding: 0 1rem;
+}
+
+.navbar-brand {
+  margin: 0 auto;
+}
+
+.active {
+  background-color: rgb(228, 227, 227);
+}
