@@ -5,14 +5,20 @@ const ResultItem = props => {
   const book = props.children;
   return (
     <div className="result-item">
-      <div className="priority-content">
-        <h1>{book.title}</h1>
-        <a target="_blank" href={book.previewLink} className="btn btn-primary">View</a>
-        <button className="btn btn-danger">Save</button>
+      <div className="top-wrapper">
+        <section className="main-details">
+          <h1>{book.title}</h1>
+          {(book.authors ? <h3>{book.authors.join(", ")}</h3> : "")}
+        </section>
+        <section className="buttons">
+          <a rel="noopener noreferrer" target="_blank" href={book.previewLink} className="btn btn-primary">View</a>
+          <button className="btn btn-danger">Save</button>
+        </section>
       </div>
-      
-      {(book.authors ? <h3>Written by {book.authors.join(", ")}</h3> : "")}
-      
+      <section className="description">
+        <img src={book.imageLinks.thumbnail} alt={book.title} />
+        <p>{book.description}</p>
+      </section>
     </div>
   );
 };

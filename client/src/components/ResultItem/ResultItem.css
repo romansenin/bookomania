@@ -1,25 +1,52 @@
 .result-item {
+  clear: both;
   background-color: #f4f4f4;
   border-radius: 5px;
   margin: 20px 0;
-  padding: 5px 15px;
+  padding: 12px;
+  overflow: hidden;
 }
 
-.priority-content {
+.top-wrapper {
   display: flex;
   align-items: center;
+  margin-bottom: 10px;
 }
 
-.priority-content h1 {
+.top-wrapper .main-details {
+  flex: 80%;
+}
+
+.top-wrapper .buttons {
+  flex: 20%;
+}
+
+.main-details h1 {
   margin: 0;
-  flex: 1;
   font-size: 150%;
+  margin-bottom: 5px;
 }
 
-.result-item h3 {
+.main-details h3 {
   font-size: 100%;
 }
 
-.priority-content .btn {
-  margin: 10px 5px;
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.description img {
+  /* display: flex; */
+  /* align-items: center; */
+  float: left;
+  margin-right: 10px;
+}
+
+/* .description p {
+  padding: 10px;
+} */
+
+.btn {
+  margin-right: 5px;
 }

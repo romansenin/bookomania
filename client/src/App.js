@@ -16,6 +16,7 @@ class App extends Component {
   }
 
   handleSearch(searchResults) {
+    console.log(searchResults);
     this.setState({ books: searchResults });
   }
 
