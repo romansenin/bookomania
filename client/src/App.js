@@ -33,8 +33,9 @@ class App extends Component {
             <Route exact path="/" component={Search} />
             <Route exact path="/saved" component={Saved} />
           </Container>
-          <Footer />
+          <div className="push"></div>
         </div>
+        <Footer />
       </Router>
     );
   }

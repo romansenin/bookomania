@@ -2,14 +2,14 @@ const axios = require("axios");
 const router = require("express").Router();
 
 router.get("/books", (req, res) => {
-  console.log(req.url);
   axios
-    .get(
-      "https://www.googleapis.com/books/v1/volumes?",
-      { params: req.query }
-    )
-    .then(({ data: { results } }) => res.json(results))
-    .catch(err => res.status(422).json(err));
+    .get("https://www.googleapis.com/books/v1/volumes?q=" + req.query.q)
+    .then(results => {
+      res.json(results.data);
+    })
+    .catch(err => {
+      res.status(422).send(err);
+    });
 });
 
 module.exports = router;

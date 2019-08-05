@@ -16,7 +16,9 @@ class BookSearch extends Component {
   }
 
   handleFormSubmit(event) {
-    API.getBooks(this.state.value).then(res => console.log(res));
+    API.getBooks(this.state.value).then(res => {
+      this.props.handleSearch(res.data.items);
+    });
     event.preventDefault();
   }
 
@@ -42,7 +44,7 @@ class BookSearch extends Component {
                 />
               </div>
               <button type="submit" className="btn btn-primary">
-                Submit
+                Search
               </button>
             </form>
           </div>

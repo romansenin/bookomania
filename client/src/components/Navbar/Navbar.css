@@ -1,10 +1,10 @@
 .navbar {
   padding: 0;
-  height: 55px;
 }
 
 .nav-link {
   padding: 1rem;
+  text-align: center;
 }
 
 .navbar-brand {
@@ -17,4 +17,18 @@
 
 .active {
   background-color: rgb(228, 227, 227);
+}
+
+.button-wrapper {
+  padding: 10px;
+  display: none;
+}
+
+@media screen and (max-width: 991px) {
+  .button-wrapper {
+    display: inline-block;
+  }
+  .navbar-brand {
+    margin: 0;
+  }
 }

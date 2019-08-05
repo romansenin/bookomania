@@ -8,13 +8,19 @@ class Search extends Component {
     this.state = {
       bookResults: []
     }
+    this.handleSearch = this.handleSearch.bind(this);
+  }
+  
+  handleSearch(searchResults) {
+    console.log(searchResults);
+    this.setState({bookResults: searchResults});
   }
 
   render() {
     return(
       <div>
-      <BookSearch />
-      <Results />
+      <BookSearch handleSearch={this.handleSearch}/>
+      <Results content={this.state.bookResults}/>
       </div>
     );
   }

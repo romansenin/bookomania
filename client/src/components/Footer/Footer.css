@@ -1,12 +1,12 @@
 footer {
   display: flex;
   background-color: rgb(165, 165, 165);
-  height: 68px;
+  justify-content: center;
   align-items: center;
-  width: 100%;
 }
 
 footer p {
+  margin: 0;
   flex: 1;
   text-align: center;
   color: #fff;
