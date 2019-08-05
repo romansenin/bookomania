@@ -1,0 +1,25 @@
+.result-item {
+  background-color: #f4f4f4;
+  border-radius: 5px;
+  margin: 20px 0;
+  padding: 5px 15px;
+}
+
+.priority-content {
+  display: flex;
+  align-items: center;
+}
+
+.priority-content h1 {
+  margin: 0;
+  flex: 1;
+  font-size: 150%;
+}
+
+.result-item h3 {
+  font-size: 100%;
+}
+
+.priority-content .btn {
+  margin: 10px 5px;
+}
