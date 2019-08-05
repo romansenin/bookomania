@@ -16,6 +16,7 @@ class BookSearch extends Component {
   }
 
   handleFormSubmit(event) {
+    this.props.renderSpinner();
     API.getBooks(this.state.value).then(res => {
       this.props.handleSearch(res.data.items);
     });
@@ -37,6 +38,7 @@ class BookSearch extends Component {
                 <label htmlFor="bookInput">Book</label>
                 <input
                   type="text"
+                  autoComplete="off"
                   className="form-control"
                   id="bookInput"
                   value={this.state.value}
@@ -44,7 +46,7 @@ class BookSearch extends Component {
                 />
               </div>
               <button type="submit" className="btn btn-primary">
-                Search
+                <span className="fa fa-search"> Search</span>
               </button>
             </form>
           </div>

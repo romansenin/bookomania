@@ -13,11 +13,16 @@ class App extends Component {
       books: []
     };
     this.handleSearch = this.handleSearch.bind(this);
+    this.renderSpinner = this.renderSpinner.bind(this);
   }
 
   handleSearch(searchResults) {
     console.log(searchResults);
     this.setState({ books: searchResults });
+  }
+
+  renderSpinner() {
+    this.setState({ books: "spinner" });
   }
 
   render() {
@@ -29,7 +34,13 @@ class App extends Component {
             <Route
               exact
               path="/"
-              render={() => <Search books={this.state.books} handleSearch={this.handleSearch} />}
+              render={() => (
+                <Search
+                  books={this.state.books}
+                  handleSearch={this.handleSearch}
+                  renderSpinner={this.renderSpinner}
+                />
+              )}
             />
             <Route exact path="/saved" component={Saved} />
           </Container>
