@@ -14,11 +14,26 @@ class App extends Component {
     };
     this.handleSearch = this.handleSearch.bind(this);
     this.renderSpinner = this.renderSpinner.bind(this);
+    this.handleEmptySearch = this.handleEmptySearch.bind(this);
   }
 
   handleSearch(searchResults) {
-    console.log(searchResults);
     this.setState({ books: searchResults });
+  }
+
+  handleEmptySearch() {
+    this.renderSpinner();
+    let seconds = 1;
+    var waitTwoSeconds = () => {
+      if (seconds === 2) {
+        this.setState({ books: "" });
+      } else {
+        seconds++;
+        setTimeout(waitTwoSeconds, 1000); // check again in a second
+      }
+    };
+
+    waitTwoSeconds();
   }
 
   renderSpinner() {
@@ -38,6 +53,7 @@ class App extends Component {
                 <Search
                   books={this.state.books}
                   handleSearch={this.handleSearch}
+                  handleEmptySearch={this.handleEmptySearch}
                   renderSpinner={this.renderSpinner}
                 />
               )}

@@ -17,6 +17,10 @@
   .top-wrapper {
     flex-direction: column;
   }
+
+  .main-details h3 {
+    text-align: center;
+  }
 }
 
 .top-wrapper .main-details {

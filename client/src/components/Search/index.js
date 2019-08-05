@@ -6,7 +6,7 @@ class Search extends Component {
   render() {
     return(
       <div>
-      <BookSearch handleSearch={this.props.handleSearch} renderSpinner={this.props.renderSpinner}/>
+      <BookSearch handleSearch={this.props.handleSearch} handleEmptySearch={this.props.handleEmptySearch} renderSpinner={this.props.renderSpinner}/>
       <Results content={this.props.books}/>
       </div>
     );

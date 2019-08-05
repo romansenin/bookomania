@@ -16,11 +16,15 @@ class BookSearch extends Component {
   }
 
   handleFormSubmit(event) {
-    this.props.renderSpinner();
-    API.getBooks(this.state.value).then(res => {
-      this.props.handleSearch(res.data.items);
-    });
     event.preventDefault();
+    this.props.renderSpinner();
+    if (this.state.value.trim() === "") {
+      this.props.handleEmptySearch();
+    } else {
+      API.getBooks(this.state.value.trim()).then(res => {
+        this.props.handleSearch(res.data.items);
+      });
+    }
   }
 
   handleChange(event) {
