@@ -21,7 +21,7 @@ class BookSearch extends Component {
     if (this.state.value.trim() === "") {
       this.props.handleEmptySearch();
     } else {
-      API.getBooks(this.state.value.trim()).then(res => {
+      API.searchBooks(this.state.value.trim()).then(res => {
         this.props.handleSearch(res.data.items);
       });
     }

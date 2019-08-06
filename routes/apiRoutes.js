@@ -2,7 +2,7 @@ const axios = require("axios");
 const router = require("express").Router();
 const db = require("../client/models");
 
-router.get("/books", (req, res) => {
+router.get("/searchBooks", (req, res) => {
   axios
     .get(
       "https://www.googleapis.com/books/v1/volumes?q=" +
@@ -17,8 +17,16 @@ router.get("/books", (req, res) => {
     });
 });
 
-router.post("/books", (req, res) => {
-  db.Book.create(req.body.book)
+router.get("/getBooks", (req, res) => {
+  db.Book.find({})
+    .then(dbBook => {
+      res.json(dbBook);
+    })
+    .catch(err => res.sendStatus(500));
+});
+
+router.post("/saveBook", (req, res) => {
+  db.Book.create(req.body.data)
     .then(function(dbBook) {
       // View the added result in the console
       console.log(dbBook);

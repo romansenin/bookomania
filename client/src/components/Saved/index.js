@@ -1,7 +1,14 @@
-import React from "react";
+import React, { Component } from "react";
+import SavedBooks from "../SavedBooks";
 
-const Saved = () => {
-  return(<h1>Saved Page</h1>)
+class Saved extends Component {
+  render() {
+    return(
+      <div>
+      <SavedBooks content={this.props.books}/>
+      </div>
+    );
+  }
 }
 
 export default Saved;

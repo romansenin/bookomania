@@ -6,15 +6,23 @@ import Navbar from "./components/Navbar";
 import Container from "./components/Container";
 import Footer from "./components/Footer";
 
+import API from "./utils/API";
+
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      books: []
+      books: [],
+      savedBooks: "spinner"
     };
     this.handleSearch = this.handleSearch.bind(this);
     this.renderSpinner = this.renderSpinner.bind(this);
     this.handleEmptySearch = this.handleEmptySearch.bind(this);
+    this.getSavedBooks = this.getSavedBooks.bind(this);
+  }
+
+  componentDidMount() {
+    this.getSavedBooks();
   }
 
   handleSearch(searchResults) {
@@ -40,6 +48,14 @@ class App extends Component {
     this.setState({ books: "spinner" });
   }
 
+  getSavedBooks() {
+    API.getBooks().then(results => {
+      this.setState({ savedBooks: results.data }, () => {
+        console.log(this.state.savedBooks);
+      });
+    });
+  }
+
   render() {
     return (
       <Router>
@@ -58,7 +74,11 @@ class App extends Component {
                 />
               )}
             />
-            <Route exact path="/saved" component={Saved} />
+            <Route
+              exact
+              path="/saved"
+              render={() => <Saved books={this.state.savedBooks} />}
+            />
           </Container>
           <div className="push" />
         </div>

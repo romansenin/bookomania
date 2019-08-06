@@ -1,6 +1,8 @@
 import React from "react";
 import "./ResultItem.css";
 
+import API from "../../utils/API";
+
 const ResultItem = props => {
   const book = props.children;
   return (
@@ -19,7 +21,24 @@ const ResultItem = props => {
           >
             View
           </a>
-          <button className="btn btn-danger">Save</button>
+          <button
+            className="btn btn-danger"
+            onClick={() => {
+              if (
+                book.imageLinks !== undefined &&
+                book.imageLinks.thumbnail !== undefined
+              ) {
+                book.image = book.imageLinks.thumbnail;
+              }
+              book.link = book.previewLink;
+              console.log(book);
+              API.saveBook(book).then(() => {
+                console.log("successfully saved the book");
+              }).catch((err) => console.log(err));
+            }}
+          >
+            Save
+          </button>
         </section>
       </div>
       <section className="description">
