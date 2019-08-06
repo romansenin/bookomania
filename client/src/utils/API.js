@@ -8,6 +8,6 @@ export default {
     return axios.get("/api/getBooks");
   },
   saveBook: function(bookObj) {
-    return axios.post("/api/saveBooks", { data: bookObj });
+    return axios.post("/api/saveBook", { data: bookObj });
   }
 };
