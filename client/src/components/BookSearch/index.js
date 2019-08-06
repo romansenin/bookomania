@@ -12,12 +12,10 @@ class BookSearch extends Component {
 
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    
   }
 
   handleFormSubmit(event) {
-    event.preventDefault();
-    this.props.renderSpinner();
+    this.props.renderSpinner("books");
     if (this.state.value.trim() === "") {
       this.props.handleEmptySearch();
     } else {
@@ -25,6 +23,7 @@ class BookSearch extends Component {
         this.props.handleSearch(res.data.items);
       });
     }
+    event.preventDefault();
   }
 
   handleChange(event) {

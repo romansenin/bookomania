@@ -30,7 +30,7 @@ class App extends Component {
   }
 
   handleEmptySearch() {
-    this.renderSpinner();
+    this.renderSpinner("books");
     let seconds = 1;
     var waitTwoSeconds = () => {
       if (seconds === 2) {
@@ -44,15 +44,22 @@ class App extends Component {
     waitTwoSeconds();
   }
 
-  renderSpinner() {
-    this.setState({ books: "spinner" });
+  renderSpinner(whichProp) {
+    switch (whichProp) {
+      case "books":
+        this.setState({ books: "spinner" });
+        break;
+      case "savedBooks":
+        this.setState({ savedBooks: "spinner" });
+        break;
+      default:
+        console.log("Unknown property");
+    }
   }
 
   getSavedBooks() {
     API.getBooks().then(results => {
-      this.setState({ savedBooks: results.data }, () => {
-        console.log(this.state.savedBooks);
-      });
+      this.setState({ savedBooks: results.data });
     });
   }
 
@@ -78,7 +85,13 @@ class App extends Component {
             <Route
               exact
               path="/saved"
-              render={() => <Saved books={this.state.savedBooks} />}
+              render={() => (
+                <Saved
+                  books={this.state.savedBooks}
+                  renderSpinner={this.renderSpinner}
+                  getSavedBooks={this.getSavedBooks}
+                />
+              )}
             />
           </Container>
           <div className="push" />

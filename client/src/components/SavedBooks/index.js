@@ -27,7 +27,15 @@ class SavedBooks extends Component {
       content = (
         <ul>
           {this.props.content.map((value, index) => {
-            return <SavedBookItem key={index}>{value}</SavedBookItem>;
+            return (
+              <SavedBookItem
+                key={index}
+                renderSpinner={this.props.renderSpinner}
+                getSavedBooks={this.props.getSavedBooks}
+              >
+                {value}
+              </SavedBookItem>
+            );
           })}
         </ul>
       );
@@ -42,12 +50,16 @@ class SavedBooks extends Component {
         <div className="card">
           <div className="card-body">
             <h5 className="card-title">Saved Books</h5>
-            <div className={
+            <div
+              className={
                 this.props.content.length === 0 ||
                 this.props.content === "spinner"
-                ? "results-wrapper"
-                : ""
-            }>{this.displayContent()}</div>
+                  ? "results-wrapper"
+                  : ""
+              }
+            >
+              {this.displayContent()}
+            </div>
           </div>
         </div>
       </div>

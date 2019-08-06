@@ -24,6 +24,7 @@ const ResultItem = props => {
           <button
             className="btn btn-danger"
             onClick={() => {
+              props.renderSpinner("savedBooks");
               if (
                 book.imageLinks !== undefined &&
                 book.imageLinks.thumbnail !== undefined
@@ -31,7 +32,6 @@ const ResultItem = props => {
                 book.image = book.imageLinks.thumbnail;
               }
               book.link = book.previewLink;
-              console.log(book);
               API.saveBook(book).then(() => {
                 props.getSavedBooks();
               }).catch((err) => console.log(err));

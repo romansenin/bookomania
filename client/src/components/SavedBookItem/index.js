@@ -1,6 +1,6 @@
 import React from "react";
 
-// import API from "../../utils/API";
+import API from "../../utils/API";
 
 const SavedBookItem = props => {
   const book = props.children;
@@ -23,18 +23,10 @@ const SavedBookItem = props => {
           <button
             className="btn btn-danger"
             onClick={() => {
-              console.log("delete button");
-              // if (
-              //   book.imageLinks !== undefined &&
-              //   book.imageLinks.thumbnail !== undefined
-              // ) {
-              //   book.image = book.imageLinks.thumbnail;
-              // }
-              // book.link = book.previewLink;
-              // console.log(book);
-              // API.saveBook(book).then(() => {
-              //   props.getSavedBooks();
-              // }).catch((err) => console.log(err));
+              props.renderSpinner("savedBooks");
+              API.deleteBook(book._id).then(() => {
+                props.getSavedBooks();
+              }).catch((err) => console.log(err));
             }}
           >
             x
