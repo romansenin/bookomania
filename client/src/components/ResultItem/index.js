@@ -29,7 +29,7 @@ const ResultItem = props => {
                 book.imageLinks !== undefined &&
                 book.imageLinks.thumbnail !== undefined
               ) {
-                book.image = book.imageLinks.thumbnail;
+                book.image = "https" + book.imageLinks.thumbnail.substring(4);
               }
               book.link = book.previewLink;
               API.saveBook(book).then(() => {
@@ -44,7 +44,7 @@ const ResultItem = props => {
       <section className="description">
         {book.imageLinks !== undefined &&
         book.imageLinks.thumbnail !== undefined ? (
-          <img src={book.imageLinks.thumbnail} alt={book.title} />
+          <img src={"https" + book.imageLinks.thumbnail.substring(4)} alt={book.title} />
         ) : (
           ""
         )}
