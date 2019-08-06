@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import FontAwesome from "react-fontawesome";
-import ResultItem from "../ResultItem";
+import SavedBookItem from "../SavedBookItem";
 import "./SavedBooks.css";
 
 class SavedBooks extends Component {
@@ -27,7 +27,7 @@ class SavedBooks extends Component {
       content = (
         <ul>
           {this.props.content.map((value, index) => {
-            return <ResultItem key={index}>{value}</ResultItem>;
+            return <SavedBookItem key={index}>{value}</SavedBookItem>;
           })}
         </ul>
       );
