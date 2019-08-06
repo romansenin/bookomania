@@ -71,6 +71,7 @@ class App extends Component {
                   handleSearch={this.handleSearch}
                   handleEmptySearch={this.handleEmptySearch}
                   renderSpinner={this.renderSpinner}
+                  getSavedBooks={this.getSavedBooks}
                 />
               )}
             />

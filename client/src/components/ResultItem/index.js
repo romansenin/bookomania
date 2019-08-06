@@ -33,7 +33,7 @@ const ResultItem = props => {
               book.link = book.previewLink;
               console.log(book);
               API.saveBook(book).then(() => {
-                console.log("successfully saved the book");
+                props.getSavedBooks();
               }).catch((err) => console.log(err));
             }}
           >

@@ -38,7 +38,7 @@ class SavedBooks extends Component {
 
   render() {
     return (
-      <div className="savedbooks">
+      <div className="saved-books">
         <div className="card">
           <div className="card-body">
             <h5 className="card-title">Saved Books</h5>

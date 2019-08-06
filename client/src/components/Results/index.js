@@ -29,7 +29,7 @@ class Results extends Component {
       content = (
         <ul>
           {this.props.content.map((value, index) => {
-            return <ResultItem key={index}>{value.volumeInfo}</ResultItem>;
+            return <ResultItem key={index} getSavedBooks={this.props.getSavedBooks}>{value.volumeInfo}</ResultItem>;
           })}
         </ul>
       );
