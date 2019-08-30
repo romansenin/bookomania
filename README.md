@@ -1,4 +1,11 @@
-# Create React Express App
+# google-books
+
+[Deployed Project](https://googlebookreactapp.herokuapp.com)
+
+Google Books is a MERN Full Stack Web application that gives users the tool to search for books within the Google Books API. If users want to save a book that they like, they can simply click the Save button to save it locally. This is handled with MongoDB through the mongoose package. The Google Books API call and fetching saved books from the database is handled with and Express router. React Router is used to switch between the Search page and the Save page. A FontAwesome spinning icon is used to indicate server communication.
+
+## Technologies
+MongoDB, Express, React, Node, CSS3/Bootstrap
 
 ## About This Boilerplate
 
@@ -27,4 +34,3 @@ Your app should now be running on <http://localhost:3000>. The Express server sh
 ## Deployment (Heroku)
 
 To deploy, simply add and commit your changes, and push to Heroku. As is, the NPM scripts should take care of the rest.
-# google-books
