@@ -38,7 +38,7 @@ router.post("/book", (req, res) => {
 });
 
 router.delete("/book/:id", (req, res) => {
-  db.Book.remove({ _id: req.params.id })
+  db.Book.deleteOne({ _id: req.params.id })
     .then(() => {
       res.sendStatus(200).end();
     })
