@@ -1,6 +1,6 @@
 # google-books
 
-![Google Books Splash Page](./media/splash-page.png)
+![Google Books Splash Page](./media/splash-page-min.png)
 
 [Deployed Project](https://googlebookreactapp.herokuapp.com)
 
