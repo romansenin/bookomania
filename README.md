@@ -22,8 +22,9 @@ Users can always revisit this tab to see the saved books, even after closing the
 
 An example is shown in the gif below:
 
-<div style="text-align: center;"><img src="./media/app-usage.gif"></div>
-
+<div align="center">
+<img src="./media/app-usage.gif">
+</div>
 
 Local storage of the book items is handled with MongoDB through the mongoose package. Express router is used for fetching books from the Google Books API as well as from the local database. React Router is used to switch between the Search page and the Save page. A spinning icon is used to indicate server communication.
 
@@ -32,7 +33,7 @@ Local storage of the book items is handled with MongoDB through the mongoose pac
 1. Git clone or download zip folder.
 1. Within the `/google-books` directory run `npm install`.
 1. In a separate terminal run `mongod` to activate local MongoDB connection.
-1. Run `npm start` and you should then be taken to a new browser running the app ([http://localhost:3000](http://localhost:3000)).
+1. Run `npm start` and you should then be taken to a new browser tab ([http://localhost:3000](http://localhost:3000)) running the app.
 
 ## Technologies
 
