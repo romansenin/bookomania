@@ -22,7 +22,8 @@ Users can always revisit this tab to see the saved books, even after closing the
 
 An example is shown in the gif below:
 
-<img src="./media/app-usage.gif" width="100%" style="height: auto;">
+<div style="text-align: center;"><img src="./media/app-usage.gif"></div>
+
 
 Local storage of the book items is handled with MongoDB through the mongoose package. Express router is used for fetching books from the Google Books API as well as from the local database. React Router is used to switch between the Search page and the Save page. A spinning icon is used to indicate server communication.
 
