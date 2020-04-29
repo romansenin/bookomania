@@ -2,11 +2,11 @@
 
 ![Splash Page](./media/splash-page-min.png)
 
-[Go To App](https://googlebookreactapp.herokuapp.com)
+[Go To App](https://bookomania.herokuapp.com/)
 
 ## Project Description
 
-Google Books Search is a MERN Full Stack Web application that gives users the tool to search for books using the Google Books API. Upon entering the title of a book, the user is presented with all the search results together with their respective title, author(s), image, and description.
+Bookomania is a MERN Full Stack Web application that gives users the tool to search for books using the Google Books API. Upon entering the title of a book, the user is presented with all the search results together with their respective title, author(s), image, and description.
 
 ![Search Feature](./media/search.png)
 
@@ -29,7 +29,7 @@ Local storage of the book items is handled with MongoDB through the mongoose pac
 ### Local Setup
 
 1. Git clone or download zip folder.
-1. Within the `/google-books` directory run `npm install`.
+1. Within the `bookomania` directory run `npm install`.
 1. In a separate terminal run `mongod` to activate local MongoDB connection.
 1. Run `npm start` and you should then be taken to a new browser tab ([http://localhost:3000](http://localhost:3000)) running the app.
 
